@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mohammed Raza Pathan</title>
+<meta name="description" content="Mohammed Raza Pathan — mobile engineer (Flutter, Android) and QA automation engineer. M.S. Computer Science at UIC, graduating May 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: confident, practical engineer — shipped apps, tested on real devices.
+IDEA: a device test lab — real phones on a bench, a test run turning green.
+PICTURE: Android phone, iPhone and a PWA browser window, each running an app with passing checks.
+COLOUR and TYPE: ice-to-aqua gradient ground, deep ink, hot pink accent; Space Grotesk + Inter.
+LAYOUT: hero split; skills; projects; experience timeline; education cards; contact band in ink.
+*/
+:root{color-scheme:light dark;
+--bg:light-dark(#e3f3f9,#051c26);--bg2:light-dark(#cde9f3,#0a3142);
+--ink:light-dark(#06222e,#e6f5fa);--soft:light-dark(#3c5c69,#9fc2cf);
+--card:light-dark(rgba(255,255,255,.78),rgba(11,48,64,.72));--line:light-dark(rgba(6,34,46,.12),rgba(159,194,207,.16));
+--pink:#ff2e7e;--aqua:#14b8d4;--pass:light-dark(#0f8a5f,#4fd8a0);--deep:#06222e;--onDeep:#e6f5fa;
+--shadow:light-dark(0 18px 40px -18px rgba(6,34,46,.28),0 18px 40px -18px rgba(0,0,0,.6))}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip;
+background:
+ radial-gradient(1200px 600px at 8% -5%,color-mix(in srgb,var(--pink) 14%,transparent),transparent 60%),
+ radial-gradient(1000px 700px at 100% 10%,color-mix(in srgb,var(--aqua) 26%,transparent),transparent 60%),
+ radial-gradient(900px 600px at 50% 100%,color-mix(in srgb,var(--aqua) 16%,transparent),transparent 60%),
+ linear-gradient(180deg,var(--bg),var(--bg2));background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1px,transparent 1.2px);background-size:26px 26px;
+-webkit-mask-image:linear-gradient(180deg,#000 0,transparent 75%);mask-image:linear-gradient(180deg,#000 0,transparent 75%)}
+a{color:inherit}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,6vw,66px);font-weight:700}h2{font-size:clamp(30px,4vw,44px)}h3{font-size:20px}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,96px) max(5vw,16px)}
+.lede{color:var(--soft);font-size:17px;max-width:62ch}
+.glass{background:var(--card);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+/* nav */
+nav{position:sticky;top:0;z-index:10;transition:background .3s,box-shadow .3s}
+nav.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.mono{font:600 18px "Space Grotesk",sans-serif;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mono span{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;color:#fff;background:linear-gradient(135deg,var(--pink),#ff7a59)}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{position:relative;display:block;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:500;font-size:15px}
+nav ul a::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav ul a:hover::after,nav ul a.on::after{transform:scaleX(1)}
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,56px);align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border-radius:99px;font-size:14px;font-weight:500;margin-bottom:22px}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--pass);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--pass) 50%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+.hero h1 .last{background:linear-gradient(90deg,var(--pink),#ff7a59);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{margin:16px 0 0;font:500 clamp(18px,2.2vw,22px) "Space Grotesk",sans-serif;min-height:1.5em}
+.role span{border-right:2px solid var(--pink);padding-right:4px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{border-color:transparent}}
+.hero .lede{margin:16px 0 28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;text-decoration:none;border:1.5px solid var(--line);background:var(--card);transition:transform .2s,box-shadow .2s,border-color .2s}
+.btn.p{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--pink)}
+.btn:focus-visible,nav a:focus-visible,.links a:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:36px}
+.stats div{border-radius:16px;padding:16px 18px}
+.stats strong{display:block;font:700 clamp(26px,3vw,34px)/1.1 "Space Grotesk",sans-serif}
+.stats div>span{font-size:13px;color:var(--soft)}
+.bench{position:relative;min-height:540px}
+.bench svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.bench .lbl{fill:var(--soft)}
+.dev{animation:float 6s ease-in-out infinite}
+.dev.d2{animation-delay:-2s}.dev.d3{animation-delay:-4s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.tick{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .4s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+.bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:fill 2.6s .4s ease-out forwards}
+@keyframes fill{to{transform:scaleX(1)}}
+.done{opacity:0;animation:fade .5s forwards}
+@keyframes fade{to{opacity:1}}
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.tick,.done{opacity:1}.bar{transform:none}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+/* sections */
+.head{margin-bottom:34px}.head p{margin:10px 0 0}
+.kicker{display:inline-block;font-weight:600;font-size:15px;color:var(--pink);margin-bottom:8px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.sk{border-radius:18px;padding:24px;transition:transform .3s,box-shadow .3s,opacity .8s}
+.sk:hover,.proj:hover{transform:translateY(-4px)}
+.sk .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;color:#fff;background:linear-gradient(135deg,var(--aqua),#2563eb)}
+.sk:nth-child(2) .ic{background:linear-gradient(135deg,var(--pink),#ff7a59)}
+.sk:nth-child(3) .ic{background:linear-gradient(135deg,#0f8a5f,#4fd8a0)}
+.sk:nth-child(4) .ic{background:linear-gradient(135deg,#7c3aed,#c084fc)}
+.sk h3{margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{padding:5px 12px;border-radius:8px;background:color-mix(in srgb,var(--ink) 6%,transparent);font-size:14px;font-weight:500}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px}
+.proj{position:relative;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,box-shadow .3s,opacity .8s;overflow:hidden}
+.proj::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--pink),var(--aqua));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.proj:hover::before{transform:scaleX(1)}
+.proj .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--soft);font-weight:500}
+.proj .meta em{font-style:normal;color:var(--pink);font-weight:600}
+.proj p{margin:0;color:var(--soft)}
+.proj ul.chips{margin-top:auto;padding-top:6px}
+.proj a.link{font-weight:600;text-decoration:none;align-self:flex-start;padding:8px 0;border-bottom:2px solid var(--pink)}
+.tl{position:relative;display:grid;gap:24px;padding-left:34px;max-width:920px}
+.tl::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--pink),var(--aqua))}
+.ev{position:relative;border-radius:18px;padding:24px}
+.ev::before{content:"";position:absolute;left:-34px;top:28px;width:20px;height:20px;border-radius:50%;background:var(--bg);border:5px solid var(--pink);box-shadow:0 0 0 5px color-mix(in srgb,var(--pink) 18%,transparent)}
+.when{font-size:14px;color:var(--soft);font-weight:500}
+.ev h3{margin:4px 0 2px}.org{font-weight:600;margin-bottom:10px}
+.ev ul{margin:0;padding-left:20px;color:var(--soft)}.ev li{margin:5px 0}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;max-width:920px}
+.ed{border-radius:20px;padding:28px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start}
+.ed .cap{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--pink),#ff7a59)}
+.ed h3{font-size:22px;margin:4px 0}
+.ed p{margin:8px 0 14px;color:var(--soft)}
+.contact{background:linear-gradient(160deg,#06222e,#0b3a4e);color:var(--onDeep);position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(255,46,126,.35),transparent 65%);pointer-events:none}
+.contact .lede{color:#9fc2cf}
+.links{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;margin-top:30px}
+.links a{display:flex;align-items:center;gap:14px;min-height:68px;padding:14px 18px;border-radius:16px;border:1px solid #1d5a70;background:rgba(255,255,255,.05);text-decoration:none;color:var(--onDeep);transition:transform .25s,border-color .25s,background .25s}
+.links a:hover{border-color:var(--pink);background:rgba(255,46,126,.08);transform:translateY(-3px)}
+.links svg{flex:none;width:26px;height:26px}
+.links small{display:block;color:#9fc2cf;font-size:13px;overflow-wrap:anywhere}
+footer{background:#041820;color:#9fc2cf;font-size:14px;padding:22px max(5vw,16px)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.bench{min-height:420px}}
+@media(max-width:600px){nav ul a{padding:10px 7px;font-size:14px}nav ul a::after{left:7px;right:7px}.stats{grid-template-columns:minmax(0,1fr)}.bench{min-height:330px}.ed{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+
+<nav id="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="mono" href="#top"><span>MR</span>Mohammed Raza</a>
+    <ul>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="band hero" id="top">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="badge glass"><i></i>Open to new-grad roles · graduating May 2027</div>
+      <h1>Mohammed Raza <span class="last">Pathan</span></h1>
+      <p class="role"><span id="role">Mobile engineer</span></p>
+      <p class="lede">Five years at Tata Consultancy Services building Flutter and Ionic apps used by police and citizens, and owning test automation across Android, iOS and the web. Now finishing an M.S. in Computer Science at the University of Illinois Chicago.</p>
+      <div class="ctas">
+        <a class="btn p" href="#projects">View projects</a>
+        <a class="btn" href="https://github.com/RazaKhan17" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/raza-khan-12295a20a/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:razakhan171299@gmail.com">Email me</a>
+      </div>
+      <div class="stats">
+        <div class="glass"><strong><span class="count" data-to="5">5</span> yrs</strong><span>at Tata Consultancy Services</span></div>
+        <div class="glass"><strong><span class="count" data-to="50">50</span>+</strong><span>real devices in parallel test runs</span></div>
+        <div class="glass"><strong><span class="count" data-to="5">5</span></strong><span>Android apps built in Java</span></div>
+      </div>
+    </div>
+    <div class="bench" aria-label="Illustration: the same app running on an Android phone, an iPhone and a web browser, with tests passing on each">
+      <svg id="bench" viewBox="0 0 580 480" preserveAspectRatio="xMidYMid meet" role="img"></svg>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="skills">
+  <div class="wrap">
+    <div class="head reveal"><span class="kicker">Toolkit</span><h2>Technical skills</h2><p class="lede">I build the app, then try to break it on fifty devices before anyone else can.</p></div>
+    <div class="skills" id="skillGrid"></div>
+  </div>
+</section>
+
+<section class="band" id="projects">
+  <div class="wrap">
+    <div class="head reveal"><span class="kicker">Work</span><h2>Featured projects</h2><p class="lede">Production apps from TCS, plus coursework and team projects at UIC.</p></div>
+    <div class="projects" id="projGrid"></div>
+  </div>
+</section>
+
+<section class="band" id="experience">
+  <div class="wrap">
+    <div class="head reveal"><span class="kicker">Career</span><h2>Experience</h2></div>
+    <div class="tl" id="timeline"></div>
+  </div>
+</section>
+
+<section class="band" id="education">
+  <div class="wrap">
+    <div class="head reveal"><span class="kicker">Learning</span><h2>Education</h2></div>
+    <div class="edu" id="eduGrid"></div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker">Let's connect</span>
+      <h2>Open to opportunities</h2>
+      <p class="lede">I'm looking for full-time new-grad roles in mobile engineering (Flutter, Android), full-stack development and QA automation, starting after May 2027. Open to any location, including remote.</p>
+    </div>
+    <div class="links reveal">
+      <a href="https://www.linkedin.com/in/raza-khan-12295a20a/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        <span>LinkedIn<small>in/raza-khan-12295a20a</small></span>
+      </a>
+      <a href="https://github.com/RazaKhan17" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+        <span>GitHub<small>github.com/RazaKhan17</small></span>
+      </a>
+      <a href="tel:+12244886899">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span>Phone<small>(224) 488-6899</small></span>
+      </a>
+      <a href="mailto:razakhan171299@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <span>Email<small>razakhan171299@gmail.com</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Based in Chicago, Illinois</span><span>© 2026 Mohammed Raza Pathan</span></div></footer>
+
+<script>
+{
+const ico={
+ mobile:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>',
+ test:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+ perf:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>',
+ tools:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M6 8.5v7M8.5 18h7M18 15.5V11a5 5 0 0 0-5-5H8.5"/></svg>',
+ cap:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/><path d="M22 9v5"/></svg>'
+};
+const skills=[
+ {t:"Mobile",c:ico.mobile,i:["Flutter","Dart","Android (Java)","Ionic","PWA"]},
+ {t:"Test automation",c:ico.test,i:["Selenium","Playwright","BrowserStack Automate","BrowserStack App Automate","Android & iOS testing"]},
+ {t:"Performance",c:ico.perf,i:["JMeter","Load testing"]},
+ {t:"Workflow and tools",c:ico.tools,i:["Git","GitHub","JIRA","Agile delivery"]}
+];
+const projects=[
+ {t:"Tamil Nadu Police officer app",m:"TCS · Flutter",s:"Shipped",d:"Field app for police officers to file and track FIRs, handle complaints and missing-person reports, and look up vehicle records.",k:["Flutter","Dart","Android","iOS"]},
+ {t:"Tamil Nadu Police citizen app",m:"TCS · Ionic",s:"Shipped",d:"Public-facing companion app that lets citizens lodge complaints, report missing persons and check vehicle details.",k:["Ionic","Hybrid mobile","Web"]},
+ {t:"Tata Neu test automation",m:"TCS · QA",s:"Shipped",d:"Owned automation for the Tata 1mg and Tata AIA modules of the Tata Neu super-app, with parallel runs on 50+ real cloud devices across PWA, Android and iOS.",k:["Selenium","Playwright","BrowserStack","JMeter","JIRA"]},
+ {t:"Urban Pulse",m:"UIC · Team project",s:"Team",d:"Collaborative project built with classmates at UIC; I contributed to the shared codebase on GitHub.",k:["Team project","GitHub"],l:"https://github.com/merfanian/Urban-pulse"},
+ {t:"Android app series",m:"UIC · CS 478",s:"Coursework",d:"Five Android apps written in Java for UIC's Android development course.",k:["Java","Android SDK"],l:"https://github.com/RazaKhan17"},
+ {t:"Hackathon builds",m:"UIC and beyond",s:"Ongoing",d:"Regular hackathon participant, prototyping apps under time pressure with small teams.",k:["Rapid prototyping","Teamwork"],l:"https://github.com/RazaKhan17"}
+];
+const experience=[
+ {w:"Current",t:"Technology Analyst",o:"Office of Technology Management, University of Illinois Chicago",b:["Analyze university research, including papers, from a technology-commercialization perspective"]},
+ {w:"5 years · current employee",t:"Software Developer / Test Automation Engineer",o:"Tata Consultancy Services",b:["Built the Tamil Nadu Police officer app in Flutter and the citizen app in Ionic","Owned automation testing for the Tata 1mg and Tata AIA modules in Tata Neu","Ran parallel suites on 50+ real devices with BrowserStack across PWA, Android and iOS","Tracked defects and features in JIRA; kept automation repos on GitHub"]}
+];
+const education=[
+ {w:"Expected May 2027",t:"M.S. in Computer Science",o:"University of Illinois Chicago",d:"Graduate study in computer science alongside work at UIC's Office of Technology Management.",k:["CS 478 · Android development","Hackathons"]}
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const chips=a=>'<ul class="chips">'+a.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+const $=id=>document.getElementById(id);
+$('skillGrid').innerHTML=skills.map(s=>'<div class="sk glass reveal"><div class="ic">'+s.c+'</div><h3>'+esc(s.t)+'</h3>'+chips(s.i)+'</div>').join('');
+$('projGrid').innerHTML=projects.map(p=>'<article class="proj glass reveal"><div class="meta"><span>'+esc(p.m)+'</span><em>'+esc(p.s)+'</em></div><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p>'+chips(p.k)+(p.l?'<a class="link" href="'+esc(p.l)+'" target="_blank" rel="noopener">View on GitHub</a>':'')+'</article>').join('');
+$('timeline').innerHTML=experience.map(e=>'<div class="ev glass reveal"><div class="when">'+esc(e.w)+'</div><h3>'+esc(e.t)+'</h3><div class="org">'+esc(e.o)+'</div><ul>'+e.b.map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></div>').join('');
+$('eduGrid').innerHTML=education.map(e=>'<div class="ed glass reveal"><div class="cap">'+ico.cap+'</div><div><div class="when">'+esc(e.w)+'</div><h3>'+esc(e.t)+'</h3><div class="org">'+esc(e.o)+'</div><p>'+esc(e.d)+'</p>'+chips(e.k)+'</div></div>').join('');
+
+/* stagger reveals within grids */
+document.querySelectorAll('.skills,.projects,.tl,.edu').forEach(g=>[...g.children].forEach((c,i)=>c.style.transitionDelay=(i*0.09)+'s'));
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const countUp=el=>{const to=+el.dataset.to;if(reduce){el.textContent=to;return}const t0=performance.now(),dur=1400;const step=t=>{const k=Math.min(1,(t-t0)/dur);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};el.textContent='0';requestAnimationFrame(step)};
+const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.count').forEach(countUp);io.unobserve(e.target)}}),{threshold:.12}):null;
+document.querySelectorAll('.reveal').forEach(el=>io?io.observe(el):el.classList.add('in'));
+/* clear stagger delay after reveal so hover stays snappy */
+document.addEventListener('transitionend',e=>{if(e.target.classList&&e.target.classList.contains('in'))e.target.style.transitionDelay='0s'});
+
+/* nav state */
+const nav=$('nav'),links=[...nav.querySelectorAll('ul a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const onScroll=()=>{nav.classList.toggle('scrolled',scrollY>10);let cur=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<140)cur=i});links.forEach((a,i)=>a.classList.toggle('on',i===cur))};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* rotating role */
+const roles=["Mobile engineer","Flutter developer","QA automation engineer","Full-stack developer"];
+const roleEl=$('role');
+if(!reduce){let r=0,ch=roleEl.textContent.length,del=true;
+ const step=()=>{if(del){ch--;roleEl.textContent=roles[r].slice(0,ch);if(ch<=0){del=false;r=(r+1)%roles.length;setTimeout(step,300)}else setTimeout(step,40)}else{const w=roles[r];ch++;roleEl.textContent=w.slice(0,ch);if(ch>=w.length){del=true;setTimeout(step,2200)}else setTimeout(step,70)}};
+ setTimeout(step,2600);}
+
+/* ---------- device bench ---------- */
+let D=0.6;
+const T=(x,y,t,o)=>'<text x="'+x+'" y="'+y+'" font-family="'+(o.f||'Inter')+',sans-serif" font-size="'+(o.s||10)+'" font-weight="'+(o.w||500)+'"'+(o.cl?' class="'+o.cl+'"':' fill="'+(o.c||'#06222e')+'"')+(o.a?' text-anchor="'+o.a+'"':'')+'>'+t+'</text>';
+const tickMark=(cx,cy)=>{const g='<g class="tick" style="animation-delay:'+D.toFixed(2)+'s"><circle cx="'+cx+'" cy="'+cy+'" r="7.5" fill="#0f8a5f"/><path d="M'+(cx-3.5)+' '+cy+'l2.4 2.4 4.8-4.8" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';D+=0.22;return g};
+const status=(x,y,w,c)=>T(x+14,y+15,'9:41',{s:10,w:600,c})+
+ '<g fill="'+c+'"><rect x="'+(x+w-52)+'" y="'+(y+10)+'" width="2.5" height="5" rx=".5"/><rect x="'+(x+w-48)+'" y="'+(y+8)+'" width="2.5" height="7" rx=".5"/><rect x="'+(x+w-44)+'" y="'+(y+6)+'" width="2.5" height="9" rx=".5"/>'+
+ '<path d="M'+(x+w-36)+' '+(y+9)+'a7 7 0 0 1 10 0l-1.6 1.6a4.6 4.6 0 0 0-6.8 0zM'+(x+w-33)+' '+(y+12)+'a3 3 0 0 1 4 0l-2 2z"/>'+
+ '<rect x="'+(x+w-23)+'" y="'+(y+7)+'" width="15" height="8" rx="2" fill="none" stroke="'+c+'" stroke-width="1"/><rect x="'+(x+w-21.5)+'" y="'+(y+8.5)+'" width="10" height="5" rx="1"/></g>';
+const rows=(x,y,w,items,h)=>items.map((it,i)=>{const ry=y+i*(h+7);return '<rect x="'+x+'" y="'+ry+'" width="'+w+'" height="'+h+'" rx="9" fill="#fff" filter="url(#sh)"/>'+
+ '<rect x="'+(x+8)+'" y="'+(ry+h/2-10)+'" width="20" height="20" rx="6" fill="'+it.c+'" opacity=".16"/><circle cx="'+(x+18)+'" cy="'+(ry+h/2)+'" r="4" fill="'+it.c+'"/>'+
+ T(x+35,ry+h/2-1.5,it.t,{s:10,w:600})+T(x+35,ry+h/2+10,it.d,{s:8,c:'#6b8794'})+tickMark(x+w-15,ry+h/2)}).join('');
+const progress=(x,y,w,label)=>'<rect x="'+x+'" y="'+y+'" width="'+w+'" height="6" rx="3" fill="#cfe3ea"/><rect class="bar" x="'+x+'" y="'+y+'" width="'+w+'" height="6" rx="3" fill="url(#gp)"/>'+
+ '<g class="done" style="animation-delay:'+(D+0.1).toFixed(2)+'s">'+T(x,y-6,label,{s:8.5,w:600,c:'#0f8a5f'})+'</g>';
+
+let o='<defs>'+
+ '<linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b3a42"/><stop offset=".5" stop-color="#111b20"/><stop offset="1" stop-color="#2b3a42"/></linearGradient>'+
+ '<linearGradient id="ibody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9d3d8"/><stop offset=".5" stop-color="#7d8b92"/><stop offset="1" stop-color="#d7e0e4"/></linearGradient>'+
+ '<linearGradient id="gp" x1="0" x2="1"><stop offset="0" stop-color="#14b8d4"/><stop offset="1" stop-color="#0f8a5f"/></linearGradient>'+
+ '<linearGradient id="hdrA" x1="0" x2="1"><stop offset="0" stop-color="#ff2e7e"/><stop offset="1" stop-color="#ff7a59"/></linearGradient>'+
+ '<linearGradient id="hdrI" x1="0" x2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#14b8d4"/></linearGradient>'+
+ '<linearGradient id="glare" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/></linearGradient>'+
+ '<filter id="sh" x="-10%" y="-20%" width="120%" height="160%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#06222e" flood-opacity=".12"/></filter>'+
+ '<filter id="big" x="-30%" y="-20%" width="160%" height="150%"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#06222e" flood-opacity=".35"/></filter>'+
+ '</defs>';
+o+='<ellipse cx="290" cy="458" rx="250" ry="14" fill="#06222e" opacity=".12"/>';
+
+/* PWA browser window (back, right) */
+{const x=360,y=118,w=210,h=290;
+ o+='<g class="dev d3"><g filter="url(#big)"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="14" fill="#f7fbfc"/></g>'+
+ '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="36" rx="14" fill="#e3ecef"/><rect x="'+x+'" y="'+(y+22)+'" width="'+w+'" height="14" fill="#e3ecef"/>'+
+ '<circle cx="'+(x+16)+'" cy="'+(y+18)+'" r="4.5" fill="#ff5f57"/><circle cx="'+(x+30)+'" cy="'+(y+18)+'" r="4.5" fill="#febc2e"/><circle cx="'+(x+44)+'" cy="'+(y+18)+'" r="4.5" fill="#28c840"/>'+
+ '<rect x="'+(x+58)+'" y="'+(y+9)+'" width="'+(w-70)+'" height="18" rx="9" fill="#fff"/>'+
+ '<path d="M'+(x+67)+' '+(y+16)+'v-1.5a2.5 2.5 0 0 1 5 0V'+(y+16)+'" stroke="#0f8a5f" stroke-width="1.3" fill="none"/><rect x="'+(x+65.5)+'" y="'+(y+16)+'" width="8" height="6" rx="1.2" fill="#0f8a5f"/>'+
+ T(x+79,y+21.5,'shop.app / health',{s:8.5,c:'#3c5c69'})+
+ '<rect x="'+(x+12)+'" y="'+(y+48)+'" width="'+(w-24)+'" height="64" rx="12" fill="url(#hdrI)"/>'+
+ T(x+24,y+70,'Order medicines',{s:12,w:700,c:'#fff',f:'Space Grotesk'})+T(x+24,y+86,'Delivered to your door',{s:8.5,c:'#e6f5fa'})+
+ '<rect x="'+(x+24)+'" y="'+(y+93)+'" width="54" height="12" rx="6" fill="#fff" opacity=".9"/>'+T(x+51,y+101.5,'Shop now',{s:7,w:600,c:'#2563eb',a:'middle'})+
+ '<circle cx="'+(x+w-40)+'" cy="'+(y+80)+'" r="20" fill="#fff" opacity=".18"/><rect x="'+(x+w-50)+'" y="'+(y+70)+'" width="20" height="20" rx="5" fill="#fff" opacity=".85"/><path d="M'+(x+w-40)+' '+(y+74)+'v12M'+(x+w-46)+' '+(y+80)+'h12" stroke="#2563eb" stroke-width="2.4" stroke-linecap="round"/>'+
+ rows(x+12,y+122,w-24,[{t:'Checkout flow',d:'Playwright · Chrome',c:'#2563eb'},{t:'Policy details',d:'Selenium · Safari',c:'#7c3aed'},{t:'Load test',d:'JMeter · peak traffic',c:'#ff2e7e'}],36)+
+ progress(x+12,y+h-18,w-24,'All suites passed')+
+ T(x+w/2,y+h+24,'Web (PWA)',{s:12,w:600,a:'middle',cl:'lbl',f:'Space Grotesk'})+'</g>';}
+
+/* Android (left) */
+{const x=22,y=92,w=168,h=338,r=30;
+ o+='<g class="dev d1"><rect x="'+(x+w-1)+'" y="'+(y+80)+'" width="4" height="44" rx="2" fill="#1b262b"/><rect x="'+(x+w-1)+'" y="'+(y+136)+'" width="4" height="26" rx="2" fill="#1b262b"/>'+
+ '<g filter="url(#big)"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+r+'" fill="url(#body)"/></g>';
+ const sx=x+7,sy=y+7,sw=w-14,sh=h-14;
+ o+='<clipPath id="ca"><rect x="'+sx+'" y="'+sy+'" width="'+sw+'" height="'+sh+'" rx="'+(r-6)+'"/></clipPath><g clip-path="url(#ca)">'+
+ '<rect x="'+sx+'" y="'+sy+'" width="'+sw+'" height="'+sh+'" fill="#f1f6f8"/>'+
+ '<rect x="'+sx+'" y="'+sy+'" width="'+sw+'" height="92" fill="url(#hdrA)"/>'+status(sx,sy+2,sw,'#fff')+
+ '<circle cx="'+(sx+sw/2)+'" cy="'+(sy+12)+'" r="4.5" fill="#06222e"/>'+
+ T(sx+14,sy+44,'Good morning,',{s:9,c:'#ffe3ec'})+T(sx+14,sy+60,'Officer',{s:15,w:700,c:'#fff',f:'Space Grotesk'})+
+ '<circle cx="'+(sx+sw-24)+'" cy="'+(sy+50)+'" r="12" fill="#fff" opacity=".9"/>'+T(sx+sw-24,sy+54,'TN',{s:8,w:700,c:'#ff2e7e',a:'middle'})+
+ '<rect x="'+(sx+10)+'" y="'+(sy+72)+'" width="'+(sw-20)+'" height="38" rx="10" fill="#fff" filter="url(#sh)"/>'+
+ T(sx+20,sy+88,'Cases today',{s:8,c:'#6b8794'})+T(sx+20,sy+102,'12 open',{s:11,w:700,f:'Space Grotesk'})+
+ '<rect x="'+(sx+sw-62)+'" y="'+(sy+84)+'" width="42" height="14" rx="7" fill="#ff2e7e" opacity=".14"/>'+T(sx+sw-41,sy+94,'+ New FIR',{s:7,w:600,c:'#ff2e7e',a:'middle'})+
+ rows(sx+10,sy+120,sw-20,[{t:'File FIR',d:'Flutter · Pixel 8',c:'#ff2e7e'},{t:'Missing report',d:'Galaxy S23',c:'#7c3aed'},{t:'Vehicle lookup',d:'OnePlus 11',c:'#2563eb'}],38)+
+ '<rect x="'+sx+'" y="'+(sy+sh-44)+'" width="'+sw+'" height="44" fill="#fff"/>'+
+ [0,1,2,3].map(i=>{const cx=sx+sw/8+i*sw/4;return i===0?'<rect x="'+(cx-16)+'" y="'+(sy+sh-38)+'" width="32" height="16" rx="8" fill="#ff2e7e" opacity=".16"/><circle cx="'+cx+'" cy="'+(sy+sh-30)+'" r="4" fill="#ff2e7e"/>':'<circle cx="'+cx+'" cy="'+(sy+sh-30)+'" r="4" fill="#9fb3bc"/>'}).join('')+
+ '<rect x="'+(sx+sw/2-24)+'" y="'+(sy+sh-9)+'" width="48" height="3" rx="1.5" fill="#06222e" opacity=".5"/>'+
+ '</g><rect x="'+sx+'" y="'+sy+'" width="'+sw+'" height="'+sh+'" rx="'+(r-6)+'" fill="url(#glare)" pointer-events="none"/>'+
+ T(x+w/2,y+h+22,'Android',{s:12,w:600,a:'middle',cl:'lbl',f:'Space Grotesk'})+'</g>';}
+
+/* iPhone (front, center) */
+{const x=196,y=40,w=176,h=360,r=38;
+ o+='<g class="dev d2"><rect x="'+(x-3)+'" y="'+(y+92)+'" width="4" height="30" rx="2" fill="#8a979d"/><rect x="'+(x-3)+'" y="'+(y+132)+'" width="4" height="30" rx="2" fill="#8a979d"/><rect x="'+(x+w-1)+'" y="'+(y+110)+'" width="4" height="48" rx="2" fill="#8a979d"/>'+
+ '<g filter="url(#big)"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+r+'" fill="url(#ibody)"/></g>'+
+ '<rect x="'+(x+3)+'" y="'+(y+3)+'" width="'+(w-6)+'" height="'+(h-6)+'" rx="'+(r-3)+'" fill="#0b0f12"/>';
+ const sx=x+8,sy=y+8,sw=w-16,sh=h-16;
+ o+='<clipPath id="ci"><rect x="'+sx+'" y="'+sy+'" width="'+sw+'" height="'+sh+'" rx="'+(r-8)+'"/></clipPath><g clip-path="url(#ci)">'+
+ '<rect x="'+sx+'" y="'+sy+'" width="'+sw+'" height="'+sh+'" fill="#f5f8fa"/>'+status(sx+4,sy+4,sw-8,'#06222e')+
+ '<rect x="'+(sx+sw/2-30)+'" y="'+(sy+8)+'" width="60" height="17" rx="8.5" fill="#000"/>'+
+ T(sx+14,sy+52,'Citizen services',{s:8.5,c:'#6b8794'})+T(sx+14,sy+70,'How can we help?',{s:15,w:700,f:'Space Grotesk'})+
+ '<rect x="'+(sx+12)+'" y="'+(sy+80)+'" width="'+(sw-24)+'" height="24" rx="12" fill="#e8eef1"/>'+
+ '<circle cx="'+(sx+25)+'" cy="'+(sy+92)+'" r="4" fill="none" stroke="#6b8794" stroke-width="1.4"/><path d="M'+(sx+28)+' '+(sy+95)+'l3 3" stroke="#6b8794" stroke-width="1.4" stroke-linecap="round"/>'+
+ T(sx+36,sy+95.5,'Search services',{s:8.5,c:'#8aa0aa'})+
+ [['Complaint','#ff2e7e'],['Missing','#7c3aed'],['Vehicle','#2563eb']].map((q,i)=>{const bw=(sw-24-12)/3,bx=sx+12+i*(bw+6);return '<rect x="'+bx+'" y="'+(sy+112)+'" width="'+bw+'" height="44" rx="10" fill="'+q[1]+'" opacity=".12"/><circle cx="'+(bx+bw/2)+'" cy="'+(sy+127)+'" r="6" fill="'+q[1]+'"/>'+T(bx+bw/2,sy+148,q[0],{s:7.5,w:600,a:'middle',c:q[1]})}).join('')+
+ rows(sx+12,sy+166,sw-24,[{t:'OTP sign-in',d:'iPhone 15 · iOS 17',c:'#2563eb'},{t:'Complaint',d:'iPhone 14',c:'#ff2e7e'}],40)+
+ progress(sx+12,sy+sh-70,sw-24,'All tests passed')+
+ '<rect x="'+sx+'" y="'+(sy+sh-52)+'" width="'+sw+'" height="52" fill="#fff" opacity=".96"/><rect x="'+sx+'" y="'+(sy+sh-52)+'" width="'+sw+'" height=".8" fill="#dbe5e9"/>'+
+ ['Home','Reports','Profile'].map((l,i)=>{const cx=sx+sw/6+i*sw/3,c=i===0?'#2563eb':'#9fb3bc';return '<rect x="'+(cx-6)+'" y="'+(sy+sh-44)+'" width="12" height="12" rx="3.5" fill="'+c+'"/>'+T(cx,sy+sh-22,l,{s:7,w:600,a:'middle',c})}).join('')+
+ '<rect x="'+(sx+sw/2-34)+'" y="'+(sy+sh-9)+'" width="68" height="4" rx="2" fill="#06222e"/>'+
+ '</g><rect x="'+sx+'" y="'+sy+'" width="'+sw+'" height="'+sh+'" rx="'+(r-8)+'" fill="url(#glare)" pointer-events="none"/>'+
+ T(x+w/2,y+h+24,'iOS',{s:12,w:600,a:'middle',cl:'lbl',f:'Space Grotesk'})+'</g>';}
+
+$('bench').innerHTML=o;
+}
+</script>
+</body>
+</html>
